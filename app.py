@@ -89,60 +89,6 @@ forecast_months = st.number_input("Enter your forecast months (Min 1 month): ", 
 st.write('Your equivalent savings forecasted by {} month is {} KES'.format(forecast_months, cost_client*forecast_months - 2760*forecast_months)) 
 
 
-# colForecast1, colForecast2 = st.beta_columns(2)
-# with colForecast1:
-#     st.subheader("Forecast Year")
-#     forecast_year = st.number_input("Enter your forecast year (Min 1 year): ", min_value=0,format='%d')
-#     forecast_months = 12 * forecast_year 
-    
-#     st.subheader("Annual Inflation Rate")
-#     annual_inflation = st.number_input("Enter annual inflation rate (%): ", min_value=0.0,format='%f')
-#     monthly_inflation = (1+annual_inflation)**(1/12) - 1
-#     cumulative_inflation_forecast = np.cumprod(np.repeat(1 + monthly_inflation, forecast_months))
-#     forecast_expenses = monthly_expenses*cumulative_inflation_forecast
-# with colForecast2:
-#     st.subheader("Annual Salary Growth Rate")
-#     annual_growth = st.number_input("Enter your expected annual salary growth (%): ", min_value=0.0,format='%f')
-#     monthly_growth = (1 + annual_growth) ** (1/12) - 1
-#     cumulative_salary_growth = np.cumprod(np.repeat(1 + monthly_growth, forecast_months))
-#     forecast_salary = monthly_takehome_salary * cumulative_salary_growth 
-    
-# forecast_savings = forecast_salary - forecast_expenses 
-# cumulative_savings = np.cumsum(forecast_savings)
-
-# x_values = np.arange(forecast_year + 1)
-
-# fig = go.Figure()
-# fig.add_trace(
-#         go.Scatter(
-#             x=x_values, 
-#             y=forecast_salary,
-#             name="Forecast Salary"
-#         )
-#     )
-
-# fig.add_trace(
-#         go.Scatter(
-#             x=x_values,
-#             y=forecast_expenses,
-#             name= "Forecast Expenses"
-#         )
-#     )
-
-# fig.add_trace(
-#         go.Scatter(
-#                 x=x_values, 
-#                 y=cumulative_savings,
-#                 name= "Forecast Savings"
-#             )
-#     )
-# fig.update_layout(title='Forecast Salary, Expenses & Savings Over the Years',
-#                    xaxis_title='Year',
-#                    yaxis_title='Amount($)')
-
-# st.plotly_chart(fig, use_container_width=True)
-
-
 # In[ ]:
 
 
